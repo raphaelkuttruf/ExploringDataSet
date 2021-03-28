@@ -26,6 +26,22 @@ namespace ExploringDataSet
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            // Erstelle Datensatz
+            MallDataSet mall = new MallDataSet();
+            mall.DataSetName = "Raphaels Mall";
+
+
+
+            // Lade alten Datensatz aus Datei
+            Console.WriteLine("Alten Datensatz laden? [ja]");
+            if (Console.ReadLine().Contains("ja"))
+                mall.ReadXml(mall.DataSetName);
+
+
+
+            // Speichere aktuellen Datensatz in Datei
+            mall.WriteXml(mall.DataSetName);
         }
     }
 }
